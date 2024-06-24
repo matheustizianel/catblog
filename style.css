@@ -1,0 +1,240 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--heading-primary: #202024;
+	--text-primary: #121214;
+	--brand-primary: #065e7c;
+
+	--font-sm: 0.875rem;
+	--font-bs: 1rem;
+	--font-md: 1.125rem;
+	--font-lg: 1.5rem;
+}
+
+html,
+body,
+input {
+	font-size: var(--font-reg);
+	font-weight: 400;
+
+	font-family: "Mulish", sans-serif;
+
+	color: var(--text-primary);
+}
+
+h1,
+h2,
+h3 {
+	font-size: var(--font-lg);
+	color: var(--heading-primary);
+}
+
+h3 {
+	font-size: var(--font-md);
+	line-height: 100%;
+}
+
+main h1 {
+	margin: 1.5rem 0 0.75rem;
+}
+
+header {
+	background-color: var(--brand-primary);
+	padding: 0.75rem 1.75rem;
+}
+
+header .page-box {
+	max-width: 25rem;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.625rem;
+}
+
+header .profile-pic {
+	width: 2.5rem;
+	height: 2.5rem;
+	object-fit: cover;
+	clip-path: circle();
+}
+
+header form input {
+	background-color: rgb(255 255 255 / 0.2);
+	border: none;
+	padding: 0.75rem 0.875rem;
+	border-radius: 4px;
+	font-weight: 600;
+	line-height: 100%;
+	color: #fffafa;
+}
+
+header form input::placeholder {
+	color: #fffafa;
+}
+
+main .page-box,
+aside .page-box {
+	padding-inline: 1.75rem;
+	max-width: 25rem;
+	margin-inline: auto;
+}
+
+main .heading-box {
+	display: flex;
+	flex-direction: column;
+}
+
+main picture img {
+	width: 100%;
+	object-fit: cover;
+}
+
+main button {
+	all: unset;
+	transition: transform 300ms;
+}
+
+main .heading-box button + button {
+	margin-left: 0.5rem;
+}
+
+main button:hover {
+	transform: scale(1.1) rotate(10deg);
+}
+
+main p {
+	margin: 1.5rem 0;
+	text-align: justify;
+	text-indent: 1.5rem;
+}
+
+main p + p {
+	margin-top: 0;
+}
+
+aside section {
+	margin-top: 0.75rem;
+	display: grid;
+	gap: 1.5rem;
+}
+
+section article {
+	display: grid;
+	grid-template-columns: 9.375rem 1fr;
+	gap: 1.5rem;
+}
+
+article img {
+	border-radius: 4px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.article-content h3 {
+	margin-bottom: 0.75rem;
+}
+
+.article-content p {
+	font-size: var(--font-sm);
+}
+
+footer {
+	background-color: var(--brand-primary);
+	margin-top: 1.5rem;
+	padding: 0.75rem 1.75rem;
+	text-align: center;
+	color: #fffafa;
+}
+
+@media screen and (min-width: 340px) {
+	header .page-box {
+		flex-direction: column;
+	}
+
+	.page-box form {
+		width: 100%;
+	}
+
+	.page-box form input {
+		width: inherit;
+	}
+
+	.page-box form input::placeholder {
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	#app {
+		display: grid;
+		grid-template-areas:
+			"header header"
+			"main aside"
+			"footer footer";
+
+		column-gap: 3rem;
+	}
+
+	header .page-box,
+	main .page-box,
+	aside .page-box {
+		max-width: initial;
+		margin-inline: initial;
+		padding-inline: initial;
+	}
+
+	header .page-box {
+		flex-direction: row;
+		max-width: 62.5rem;
+		margin-inline: auto;
+	}
+
+	main .page-box {
+		max-width: max-content;
+	}
+
+	main .heading-box {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 1.5rem;
+	}
+
+	main h1 {
+		margin: 0;
+	}
+
+	main p {
+		width: 100%;
+	}
+
+	aside .page-box {
+		max-width: 22.5rem;
+	}
+
+	header {
+		grid-area: header;
+	}
+
+	main {
+		grid-area: main;
+		margin-top: 3rem;
+		margin-left: 3rem;
+	}
+
+	aside {
+		grid-area: aside;
+		margin-top: 3rem;
+		margin-right: 3rem;
+	}
+
+	footer {
+		grid-area: footer;
+	}
+}
